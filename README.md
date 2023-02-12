@@ -32,5 +32,6 @@ Once installed, any function can be run by opening a terminal in the folder cont
 
 This could open a python terminal.
 
-You can then import the libs by typing `import pdf_rotate as p` for example 
+You can then import the libs by typing `import ez_pdf as ez` for example.
+On importation, a help message should appear. If not simply type `ez.help()` 
 
