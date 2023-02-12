@@ -6,7 +6,7 @@ import shutil
 #########################
 ## ADD YOUR FILES HERE ##
 #########################
-files_to_add_to_lib = ["pdf_rotate.py"]
+files_to_add_to_lib = ["ez_pdf.py"]
 #########################
 
 
@@ -40,12 +40,12 @@ if notify == True :
 
         # if no errors, send a winows notif
         notif.title = 'add_to_lib.py | Successfull execution'
-        notif.message = 'all good :)'
+        notif.message = 'The Python files can now be imported as libraries'
 
         # try to add a fancy windows icon, if not possible, it's ok
         # a default one will be used by notifypy
         try :
-            notif.icon = r"C:\Windows\System32\SecurityAndMaintenance.png"
+            notif.icon = r"C:\Windows\System32\@WindowsHelloFaceToastIcon.png"
         except notifypy.exceptions.InvalidIconPath :
             None
 
