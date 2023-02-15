@@ -10,13 +10,23 @@ files_to_add_to_lib = ["ez_pdf.py"]
 #########################
 
 
+
+# Go to the folder where the python file is executed
+# This way, if the python file is called from a command line,
+# the relative filepaths will have the folder of the python file as a refence 
+# and not the folder from which the command line is opened
+file_path = os.path.dirname(__file__)
+if file_path != "" :
+    os.chdir(file_path)
+
 # try to import notify lib
 # if this fails, the errors will be redirected to a file instead
 notify = True
 try:
     from notifypy import Notify
     import notifypy
-except ModuleNotFoundError :
+#except ModuleNotFoundError :
+except :
     notify = False
     import sys
     sys.stderr = open('erreur_add_to_lib.txt', 'w')
@@ -26,7 +36,6 @@ except ModuleNotFoundError :
 def add_file_to_lib(input_files) : 
     # find the lib folder
     lib_path = os.path.dirname(os.__file__)
-
     # do the copy
     for file in input_files :
         shutil.copy(file, lib_path)
